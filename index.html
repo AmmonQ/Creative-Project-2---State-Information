@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Polution Lookup - Creative Project 2</title>
+        <title>Pollution Lookup - Creative Project 2</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Polution Lookup - Creative Project 2</h1>
+        <div class="container">
+            <h1>Pollution Lookup - Creative Project 2</h1>
+            
+             <div class="form-group">
+                 <label for="country_input">Country: </label>
+                 <input class="form-control" type="text" name="country_input" id="country_input" required placeholder="(Ex: USA, Mongolia, Canada)">
+             </div>
+             <div class="form-group">
+                 <label for="state_input" onclick="load_states()">State: </label>
+                 <input class="form-control" oninput="load_states()" onclick="load_states()" list="states" type="text" name="state_input" id="state_input" required autocomplete="off" placeholder="Spell out state name (Ex: Washington, Ulaanbaatar, Ontario):">
+                 <datalist id="states">
+
+                 </datalist>
+             </div>
+            <div class="form-group">
+                 <label for="city_input" onclick="load_cities()">City: </label>
+                 <input class="form-control" oninput="load_cities()" type="text" list="cities" onclick="load_cities()" name="city_input" id="city_input" required autocomplete="off" placeholder="(Ex: Steilacoom, Ulaanbaatar, Toronto)">
+                <datalist id="cities">
+
+                </datalist>
+             </div>
+             <div class="form-group">
+                 <button class="btn btn-primary" onclick="get_data()">Submit</button>
+             </div>
+
+            <div id="results">
+
+            </div>
+        </div>
         
-        <style src="script.js"></style>
+        <script src="script.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>
