@@ -39,7 +39,7 @@ function load_states(e) {
     fetch(request)
         .then(function(res) {
             if (res.status != 200) {
-                document.getElementById("state_input").setAttribute("placeholder","Location not autofilled. Please try again or try manually typing in state. Perhaps the state is not spelled out? Perhaps there is no data for this location.");
+                document.getElementById("state_input").setAttribute("placeholder","Location not autofilled. Please try again.");
                 return {
                     text: "Error calling IQ Air API service: " + res.statusText
                 }
@@ -66,7 +66,7 @@ function load_cities(e) {
     fetch(request)
         .then(function(res) {
             if (res.status != 200) {
-                document.getElementById("city_input").setAttribute("placeholder","Location not autofilled. Please try again or try manually typing in city. Perhaps the city is not spelled correctly? Perhaps there is no data for this location.");
+                document.getElementById("city_input").setAttribute("placeholder","Location not autofilled. Please try again.");
                 return {
                     text: "Error calling IQ Air API service: " + res.statusText
                 }

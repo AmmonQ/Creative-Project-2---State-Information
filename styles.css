@@ -19,7 +19,7 @@ body {
 .form-control {
     background-color: #F2F2F2 !important;
     font-size: 2vh !important;
-    padding: 0.5em;
+    padding: 1em !important;
 }
 
 h1 {
@@ -29,4 +29,9 @@ h1 {
 
 #submit_button {
     font-size: 2vh !important;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    width: 100%;
 }

@@ -10,18 +10,18 @@
             
              <div class="form-group">
                  <label for="country_input">Country: </label>
-                 <input class="form-control" type="text" name="country_input" id="country_input" required placeholder="(Ex: USA, Mongolia, Canada)">
+                 <input class="form-control" type="text" name="country_input" id="country_input" required placeholder="(Ex: USA, Canada)">
              </div>
              <div class="form-group">
                  <label for="state_input" onclick="load_states()">State: </label>
-                 <input class="form-control" oninput="load_states()" onclick="load_states()" list="states" type="text" name="state_input" id="state_input" required autocomplete="off" placeholder="Spell out state name (Ex: Washington, Ulaanbaatar, Ontario):">
+                 <input class="form-control" oninput="load_states()" onclick="load_states()" list="states" type="text" name="state_input" id="state_input" required autocomplete="off" placeholder="Spell out state name (Ex: Utah, Ontario)">
                  <datalist id="states">
 
                  </datalist>
              </div>
             <div class="form-group">
                  <label for="city_input" onclick="load_cities()">City: </label>
-                 <input class="form-control" oninput="load_cities()" type="text" list="cities" onclick="load_cities()" name="city_input" id="city_input" required autocomplete="off" placeholder="(Ex: Steilacoom, Ulaanbaatar, Toronto)">
+                 <input class="form-control" oninput="load_cities()" type="text" list="cities" onclick="load_cities()" name="city_input" id="city_input" required autocomplete="off" placeholder="(Ex: Provo, Toronto)">
                 <datalist id="cities">
 
                 </datalist>
