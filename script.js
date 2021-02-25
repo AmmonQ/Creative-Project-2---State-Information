@@ -32,12 +32,12 @@ function get_data() {
                 }
             }
             
-            let averageCommuteTime = "<p>Average commute time: " + (Math.round(json.data[index]["Average Commute Time"] * 100) / 100) + " minutes</p>";
-            let averageIncome = "<p>Average income: $" + (Math.round(json.data[index]["Average Income"] * 100) / 100).toLocaleString("en-US") + "</p>";
-            let updatedYear = "<p>Updated year: " + json.data[index].Year + "</p>";
-            let realEstateTaxes = "<p>Real Estate Taxes by Mortgage: $" + json.data[index]["Real Estate Taxes by Mortgage"].toLocaleString("en-US") + "</p>";
-            let population = "<p>Population: " + json.data[index]["Total Population"].toLocaleString("en-US") + "</p>";
-            let veterans = "<p>Veteran Population: " + json.data[index].Veterans.toLocaleString("en-US") + "</p>";
+            let averageCommuteTime = "<p>Average commute time: <strong>" + (Math.round(json.data[index]["Average Commute Time"] * 100) / 100) + " minutes</strong></p>";
+            let averageIncome = "<p>Average income: <strong>$" + (Math.round(json.data[index]["Average Income"] * 100) / 100).toLocaleString("en-US") + "</strong></p>";
+            let updatedYear = "<p>Updated year: <strong>" + json.data[index].Year + "</strong></p>";
+            let realEstateTaxes = "<p>Real Estate Taxes by Mortgage: <strong>$" + json.data[index]["Real Estate Taxes by Mortgage"].toLocaleString("en-US") + "</strong></p>";
+            let population = "<p>Population: <strong>" + json.data[index]["Total Population"].toLocaleString("en-US") + "</strong></p>";
+            let veterans = "<p>Veteran Population: <strong>" + json.data[index].Veterans.toLocaleString("en-US") + "</strong></p>";
         
             let text = "";
         
