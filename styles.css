@@ -8,12 +8,14 @@ img {
     color: #F2F2F2;
     padding: 1em;
     border-radius: 1em;
+    margin-bottom: 4em;
 }
 
 body {
     background-color: #D2D5D9 !important;
     font-size: 3vh !important;
     padding: 1em;
+    font-family: 'Noto Sans JP', sans-serif !important;
 }
 
 .form-control {
@@ -43,12 +45,13 @@ input[type="checkbox"] {
 }
 
 footer {
-    width: 100%;
-    background-color: #4D5159;
+    width: 101%;
+    background-color: #546366;
     color: #F2F2F2;
     position: fixed;
     bottom: 0;
-    padding: 0.25em;
+    padding: 0.5em;
     text-align: center;
-    margin-left: -1em;
+    margin-left: -2em;
+    font-size: 14pt !important;
 }
