@@ -41,3 +41,14 @@ input[type="checkbox"] {
     display: none;
     position: absolute;
 }
+
+footer {
+    width: 100%;
+    background-color: #4D5159;
+    color: #F2F2F2;
+    position: fixed;
+    bottom: 0;
+    padding: 0.25em;
+    text-align: center;
+    margin-left: -1em;
+}
