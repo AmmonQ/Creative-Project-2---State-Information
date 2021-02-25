@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Creative Project 2 - State Information</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+            <h1>Creative Project 2 - State Information</h1>
+            
+             <div class="form-group">
+                 <label for="state_input">State: </label>
+                 <input class="form-control" type="text" name="state_input" id="state_input" required placeholder="Type out state name">
+             </div>
+            <div class="form-group">
+                <legend>Which Data Do You Want to See?</legend>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="commute_time" name="commute_time" value="commute_time">
+                    <label class="custom-control-label" for="commute_time">Average Commute Time</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="income" name="income" value="income">
+                    <label class="custom-control-label" for="income">Average Income</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="taxes" name="taxes" value="taxes">
+                    <label class="custom-control-label" for="taxes">Real Estate Taxes by Mortgage</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="population" name="population" value="population">
+                    <label class="custom-control-label" for="population">Population</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="vets" name="vets" value="vets">
+                    <label class="custom-control-label" for="vets">Veteran Population</label>
+                </div>
+            </div>
+             <div class="form-group">
+                 <button id="submit_button" class="btn btn-primary" onclick="get_data()">Submit</button>
+             </div>
+
+            <div id="results">
+                Results will load here.
+            </div>
+        
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        
+        <footer>
+            
+        </footer>
+    </body>
+</html>
