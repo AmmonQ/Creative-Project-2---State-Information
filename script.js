@@ -9,7 +9,6 @@ function get_data() {
     let pop = document.getElementById("population");
     let vets = document.getElementById("vets");
     
-    console.log("state: " + state);
     let request = "https://datausa.io/api/data?drilldowns=State&measures=Average%20Income,Total%20Population,Average%20Commute%20Time,State%20Tuition,Workforce%20Population,Veterans,Real%20Estate%20Taxes%20by%20Mortgage";
     
     fetch(request)
@@ -24,20 +23,55 @@ function get_data() {
             }
         }).then(function(json) {
             let index = 0;
-            for (let i = 0; i < json.data.length; i++) {
-                if (json.data[i].State === state) {
-                    console.log(json.data[i].State);
-                    index = i;
+            for (let iterator = 60; iterator < json.data.length; iterator++) {
+                if (json.data[iterator].State === state) {  
+                    console.log("iterator: ", iterator);
+                    index = iterator;
+                    console.log("index " + index);
                     break;
                 }
             }
             
-            let averageCommuteTime = "<p>Average commute time: <strong>" + (Math.round(json.data[index]["Average Commute Time"] * 100) / 100) + " minutes</strong></p>";
-            let averageIncome = "<p>Average income: <strong>$" + (Math.round(json.data[index]["Average Income"] * 100) / 100).toLocaleString("en-US") + "</strong></p>";
+            //console.log("json.data = ", json.data[index]);
+        
+            let averageCommuteTime = "";
+            let averageIncome = "";
+            let realEstateTaxes = "";
+            let population = "";
+            let veterans = "";
+            
+            if (json.data[index]["Average Commute Time"]) {
+                averageCommuteTime = "<p>Average commute time: <strong>" + (Math.round(json.data[index]["Average Commute Time"] * 100) / 100) + " minutes</strong></p>";
+            } else {
+                averageCommuteTime = "<p>No Average commute time data available for this state.</p>";
+            }
+            
+            if (json.data[index]["Average Income"]) {
+                averageIncome = "<p>Average income: <strong>$" + (Math.round(json.data[index]["Average Income"] * 100) / 100).toLocaleString("en-US") + "</strong></p>";
+            } else {
+                averageIncome = "<p>Average income data not available for this state.</p>"
+            }
+            
             let updatedYear = "<p>Updated year: <strong>" + json.data[index].Year + "</strong></p>";
-            let realEstateTaxes = "<p>Real Estate Taxes by Mortgage: <strong>$" + json.data[index]["Real Estate Taxes by Mortgage"].toLocaleString("en-US") + "</strong></p>";
-            let population = "<p>Population: <strong>" + json.data[index]["Total Population"].toLocaleString("en-US") + "</strong></p>";
-            let veterans = "<p>Veteran Population: <strong>" + json.data[index].Veterans.toLocaleString("en-US") + "</strong></p>";
+            
+            if (json.data[index]["Real Estate Taxes by Mortgage"]) {
+                realEstateTaxes = "<p>Real Estate Taxes by Mortgage: <strong>$" + json.data[index]["Real Estate Taxes by Mortgage"].toLocaleString("en-US") + "</strong></p>";
+            } else {
+                realEstateTaxes = "<p>Real Estate Taxes by Mortgage data not available for this state.</p>";
+            }
+            
+            if (json.data[index]["Total Population"]) {
+                population = "<p>Population: <strong>" + json.data[index]["Total Population"].toLocaleString("en-US") + "</strong></p>";
+            } else {
+                population = "<p>Population data not available for this state.</p>";
+            }
+            
+            if (json.data[index].Veterans) {
+                veterans = "<p>Veteran Population: <strong>" + json.data[index].Veterans.toLocaleString("en-US") + "</strong></p>";
+            } else {
+                veterans = "<p>Veteran Population data not available for this state.</p>";
+            }
+            
         
             let text = "";
         
